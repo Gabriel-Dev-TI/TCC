@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'view/Inicial.dart';
+import 'Splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Delivery', home: Inicial());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false, // Remove aquela etiqueta do debug
+      title: 'Delivery',
+      home: Splash(rota: Inicial()),
+    );
   }
 }

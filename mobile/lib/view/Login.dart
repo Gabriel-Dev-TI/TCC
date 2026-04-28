@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/components/formularios.dart';
+import '/components/formularios.dart';
 import '/components/estilos.dart';
 import '/components/botoes.dart';
 import 'Inicial.dart';
+import '/Splash.dart';
+import 'PainelEmpresa.dart';
+import 'PainelEntregador.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key, required this.isEntregador});
@@ -39,7 +42,7 @@ class Login extends StatelessWidget {
                               ? corTextBotao1
                               : corTextBotao2,
                           texto: isEntregador ? 'Entregador' : 'Empresa',
-                          redirecionamento: Inicial(),
+                          redirecionamento: Splash(rota: Inicial()),
                         ),
                       ),
                     ],
@@ -72,7 +75,7 @@ class Login extends StatelessWidget {
                     corPrincipal: corPrincipal,
                     corSecundaria: corTextBotao1,
                     texto: 'Entrar',
-                    redirecionamento: (isEntregador ? Inicial() : Inicial()),
+                    redirecionamento: (isEntregador ? Splash(rota: PainelEntregador()) : Splash(rota: PainelEmpresa()) ),
                   ),
                   SizedBox(height: 20),
                   Row(
