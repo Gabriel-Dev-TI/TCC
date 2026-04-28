@@ -1,78 +1,94 @@
 import 'package:flutter/material.dart';
-import 'PainelEntregador.dart';
-import 'PainelEmpresa.dart';
-import '/components/botoes.dart';
+import 'package:mobile/components/formularios.dart';
 import '/components/estilos.dart';
+import '/components/botoes.dart';
+import 'Inicial.dart';
 
-//Icons.motorcycle_outlined
 class Login extends StatelessWidget {
-  const Login({super.key});
+  const Login({super.key, required this.isEntregador});
+
+  final bool isEntregador;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: corSecundaria,
-      body: Column(
-        children: [
-          Expanded(
-            child: Column(
-              children: [
-                Image.asset('assets/logoRotaJa.png', height: 150, width: 250),
-                Text(
-                  'Conectamos quem envia com quem entrega.',
-                  style: DestaquePreto,
-                ),
-                Text('Entregas mais rápidas,seguras e eficientes para todos.'),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Image.asset(
-              'assets/imagemFundo.png',
-              fit: BoxFit.fill,
-              width: double.infinity,
-            ),
-          ),
-
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.fromLTRB(20, 10, 20, 50),
+      body: Padding(
+        padding: EdgeInsetsGeometry.fromLTRB(30, 30, 30, 50),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  botao(
-                    icone: Icon(Icons.motorcycle),
-                    corPrincipal: corPrincipal,
-                    corSecundaria: corTextBotao1,
-                    texto: 'Sou Entregador',
-                    redirecionamento: Entregador(),
-                  ),
-
-                  SizedBox(height: 20),
-                  botao(
-                    icone: Icon(Icons.storefront),
-                    corPrincipal: corSecundaria,
-                    corSecundaria: corTextBotao2,
-                    texto: 'Sou Empresa',
-                    redirecionamento: Empresa(),
-                  ),
-                  SizedBox(height: 30),
+                  Text('Entrar', style: textoDestaque),
+                  Text('Perfil Selecionado:', style: textoSimples),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Ainda não tem uma conta?'),
-                      SizedBox(width: 5),
-                      Text('Criar', style: TextStyle(color: corPrincipal)),
+                      Expanded(
+                        child: botao(
+                          icone: Icon(
+                            isEntregador ? Icons.motorcycle : Icons.storefront,
+                          ),
+                          corPrincipal: isEntregador
+                              ? corPrincipal
+                              : corSecundaria,
+                          corSecundaria: isEntregador
+                              ? corTextBotao1
+                              : corTextBotao2,
+                          texto: isEntregador ? 'Entregador' : 'Empresa',
+                          redirecionamento: Inicial(),
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
             ),
-          ),
-        ],
+            Expanded(
+              flex: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Spacer(),
+                  Text('Email', style: textoDestaque),
+                  TextoCampo(label: 'seu@email.com'),
+                  Spacer(),
+                  Text('Senha', style: textoDestaque),
+                  TextoCampo(label: 'Digite sua Senha'),
+                  SizedBox(height: 10),
+                  Text('Esqueceu sua senha?', style: textolink),
+                  Spacer(),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  botao(
+                    corPrincipal: corPrincipal,
+                    corSecundaria: corTextBotao1,
+                    texto: 'Entrar',
+                    redirecionamento: (isEntregador ? Inicial() : Inicial()),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Ainda não tem conta?'),
+                      SizedBox(width: 10),
+                      Text('Cadastre-se', style: textolink),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-//Navigator.push( context,MaterialPageRoute(builder: (context) =>Entregador()),);

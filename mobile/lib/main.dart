@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'view/Login.dart';
+import 'view/Inicial.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Delivery', home: Login());
+    return MaterialApp(title: 'Delivery', home: Inicial());
   }
 }
