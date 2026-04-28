@@ -3,6 +3,7 @@ import 'package:mobile/components/appbar.dart';
 import 'package:mobile/components/botoes.dart';
 import '/components/estilos.dart';
 import 'package:mobile/components/blocos.dart';
+import 'CriarEntrega.dart';
 
 class PainelEmpresa extends StatelessWidget {
   const PainelEmpresa({super.key});
@@ -22,6 +23,7 @@ class PainelEmpresa extends StatelessWidget {
                 corSecundaria: corSecundaria,
                 texto: 'Nova Entrega',
                 icone: Icon(Icons.add),
+                redirecionamento: Entrega(),
               ),
             ),
 
@@ -39,7 +41,7 @@ class PainelEmpresa extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('Histórico', style: textoDestaque),
-                    Text('Ver Todos', style: textolink),
+                    Text('Ver Detalhes', style: textolink),
                   ],
                 ),
                 SizedBox(height: 10),

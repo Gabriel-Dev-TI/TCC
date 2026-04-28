@@ -110,3 +110,38 @@ class BlocoEntregador extends StatelessWidget {
     );
   }
 }
+
+class BlocoVazio extends StatelessWidget {
+  const BlocoVazio({
+    super.key,
+    required this.corPrincipal,
+    required this.titulo,
+    required this.conteudo,
+  });
+
+  final String titulo;
+  final Widget conteudo;
+  final Color corPrincipal;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: corPrincipal,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [Text(titulo, style: textoDestaque)],
+          ),
+          conteudo,
+        ],
+      ),
+    );
+  }
+}

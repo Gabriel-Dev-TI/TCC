@@ -83,7 +83,7 @@ class Login extends StatelessWidget {
                     children: [
                       Text('Ainda não tem conta?'),
                       SizedBox(width: 10),
-                      Text('Cadastre-se', style: textolink),
+                      Text('Contate um ADM', style: textolink),
                     ],
                   ),
                 ],

@@ -61,7 +61,7 @@ class Inicial extends StatelessWidget {
                     children: [
                       Text('Ainda não tem uma conta?'),
                       SizedBox(width: 5),
-                      Text('Criar', style: textolink),
+                      Text('Contate um ADM', style: textolink),
                     ],
                   ),
                 ],
