@@ -11,6 +11,7 @@ Color corDestaque1 = Color(0xFF4B2FD6);
 Color corDestaque2 = Color(0xFF8A6BFF);
 Color corNeutra = Colors.grey;
 Color corBlocos = const Color.fromARGB(255, 230, 225, 225);
+Color corBotaoEntregador = Colors.green;
 
 Color corTextBotao1 = Colors.white;
 Color corTextBotao2 = Colors.black;
@@ -23,3 +24,6 @@ TextStyle textoDestaque = TextStyle(
 
 TextStyle textoSimples = TextStyle(color: Colors.grey, fontSize: 15);
 TextStyle textolink = TextStyle(color: corPrincipal);
+TextStyle textoVerde = TextStyle(color: Colors.green);
+TextStyle textoAmarelo = TextStyle(color: Colors.yellow);
+TextStyle textoVermelho = TextStyle(color: Colors.red);
