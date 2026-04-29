@@ -16,9 +16,10 @@ class _SplashState extends State<Splash> {
     super.initState();
 
     Future.delayed(Duration(seconds: 1), () {
-      Navigator.pushReplacement(
+      Navigator.pushAndRemoveUntil(//remove as outras paginas
         context,
         MaterialPageRoute(builder: (context) => widget.rota),
+        (route) => false,
       );
     });
   }

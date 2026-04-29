@@ -75,7 +75,9 @@ class Login extends StatelessWidget {
                     corPrincipal: corPrincipal,
                     corSecundaria: corTextBotao1,
                     texto: 'Entrar',
-                    redirecionamento: (isEntregador ? Splash(rota: PainelEntregador()) : Splash(rota: PainelEmpresa()) ),
+                    redirecionamento: isEntregador
+                        ? Splash(rota: PainelEntregador())
+                        : Splash(rota: PainelEmpresa()),
                   ),
                   SizedBox(height: 20),
                   Row(
