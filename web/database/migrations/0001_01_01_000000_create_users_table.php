@@ -19,9 +19,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Apagar a tabela de usuarios (caso precise reverter).
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('usuarios');

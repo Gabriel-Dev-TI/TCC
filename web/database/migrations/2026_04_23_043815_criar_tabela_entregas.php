@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
     public function up(): void {
     Schema::create('entregas', function (Blueprint $table) {
         $table->integer('id', true);
@@ -16,7 +14,7 @@ return new class extends Migration
         $table->integer('entregador_id')->nullable();
         $table->integer('endereco_origem_id');
         $table->integer('endereco_destino_id');
-        $table->enum('status', ['pendente', 'buscando', 'em_transito', 'concluido', 'cancelado'])->default('pendente');
+        $table->enum('status', ['pendente','em_transito', 'concluido', 'cancelado'])->default('pendente');
         $table->decimal('preco', 10, 2);
         $table->text('observacoes')->nullable();
         $table->timestamp('criado_em')->useCurrent();
@@ -28,9 +26,7 @@ return new class extends Migration
     });
 }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
 {
     Schema::dropIfExists('entregas');
