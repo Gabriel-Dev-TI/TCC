@@ -26,11 +26,7 @@ class Inicial extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Image.asset(
-              'assets/imagemFundo.png',
-              fit: BoxFit.fill,
-              width: double.infinity,
-            ),
+            child: Image.asset('assets/imagemFundo.png', fit: BoxFit.fitHeight),
           ),
 
           Expanded(

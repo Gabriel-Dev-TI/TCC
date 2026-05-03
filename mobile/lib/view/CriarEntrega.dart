@@ -3,6 +3,7 @@ import 'package:mobile/components/blocos.dart';
 import 'package:mobile/components/botoes.dart';
 import 'package:mobile/components/estilos.dart';
 import 'package:mobile/components/formularios.dart';
+import 'package:mobile/view/PainelEmpresa.dart';
 
 class Entrega extends StatelessWidget {
   const Entrega({super.key});
@@ -20,6 +21,34 @@ class Entrega extends StatelessWidget {
           ),
         ],
       ),
+      drawer: Drawer(
+        backgroundColor: corSecundaria,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              child: Expanded(child: Image.asset('assets/logoRotaJa.png')),
+            ),
+            ListTile(
+              title: Text('Principal'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => PainelEmpresa()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Criar Entrega'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+
       body: Padding(
         padding: EdgeInsets.all(10),
         child: Column(

@@ -10,8 +10,7 @@ AppBar appBarEntregador = AppBar(
         padding: EdgeInsetsGeometry.fromLTRB(10, 3, 10, 0),
         child: Row(
           children: [
-            Icon(Icons.menu),
-            SizedBox(width: 30),
+            SizedBox(width: 50),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,8 +22,6 @@ AppBar appBarEntregador = AppBar(
                 Text('Pronto para entregar?', style: TextStyle(fontSize: 13)),
               ],
             ),
-            Spacer(),
-            Icon(Icons.notifications),
           ],
         ),
       ),
@@ -41,8 +38,7 @@ AppBar appBarEmpresa = AppBar(
         padding: EdgeInsetsGeometry.fromLTRB(10, 3, 10, 0),
         child: Row(
           children: [
-            Icon(Icons.menu),
-            SizedBox(width: 30),
+            SizedBox(width: 50),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,8 +53,6 @@ AppBar appBarEmpresa = AppBar(
                 ),
               ],
             ),
-            Spacer(),
-            Icon(Icons.notifications),
           ],
         ),
       ),

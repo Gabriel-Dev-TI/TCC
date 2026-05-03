@@ -12,22 +12,38 @@ class PainelEmpresa extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBarEmpresa,
+      drawer: Drawer(
+        backgroundColor: corSecundaria,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              child: Expanded(child: Image.asset('assets/logoRotaJa.png')),
+            ),
+            ListTile(
+              title: Text('Principal'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Criar Entrega'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => Entrega()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+
       body: Padding(
         padding: EdgeInsets.all(30),
         child: Column(
           children: [
-            SizedBox(
-              height: 70,
-              child: botao(
-                corPrincipal: corPrincipal,
-                corSecundaria: corSecundaria,
-                texto: 'Nova Entrega',
-                icone: Icon(Icons.add),
-                redirecionamento: Entrega(),
-              ),
-            ),
-
-            SizedBox(height: 30),
             Bloco(
               corPrincipal: corBlocos,
               titulo: 'Pedidos ativos',
