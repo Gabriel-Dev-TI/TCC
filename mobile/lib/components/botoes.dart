@@ -19,25 +19,34 @@ class botao extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: corPrincipal,
-        foregroundColor: corSecundaria,
-        side: BorderSide(color: corNeutra, width: 1),
-        padding: EdgeInsets.symmetric(vertical: 20),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      ),
-      onPressed: () {
-        if (redirecionamento != null) {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => redirecionamento!),
-          );
-        }
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [if (icone != null) icone!, SizedBox(width: 10), Text(texto)],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: corPrincipal,
+          foregroundColor: corSecundaria,
+          side: BorderSide(color: corNeutra, width: 1),
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        onPressed: () {
+          if (redirecionamento != null) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => redirecionamento!),
+            );
+          }
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icone != null) icone!,
+            SizedBox(width: 10),
+            Text(texto),
+          ],
+        ),
       ),
     );
   }

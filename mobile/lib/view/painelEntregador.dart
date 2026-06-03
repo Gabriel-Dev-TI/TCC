@@ -11,26 +11,23 @@ class PainelEntregador extends StatelessWidget {
     return Scaffold(
       appBar: appBarEntregador,
       drawer: Drawer(
-       backgroundColor: corSecundaria,
-   child: ListView(
-     padding: EdgeInsets.zero,
-     children: [
-        DrawerHeader(
-         child:
-         Expanded(child: Image.asset('assets/logoRotaJa.png'),),
-       ),
-       ListTile(
-         title:  Text('Principal'),
-         onTap: () {
-           Navigator.pop(context);
-         },
-       ),
-     ],
-   ),
- ), 
+        backgroundColor: corSecundaria,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(child: Image.asset('assets/logoRotaJa.png')),
+            ListTile(
+              title: Text('Principal'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
 
       body: Padding(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.all(20),
         child: ListView(
           children: [
             Text('Entregas Disponíveis', style: textoDestaque),

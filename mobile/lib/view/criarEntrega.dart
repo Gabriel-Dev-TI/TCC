@@ -3,7 +3,7 @@ import 'package:mobile/components/blocos.dart';
 import 'package:mobile/components/botoes.dart';
 import 'package:mobile/components/estilos.dart';
 import 'package:mobile/components/formularios.dart';
-import 'package:mobile/view/PainelEmpresa.dart';
+import 'package:mobile/view/painelEmpresa.dart';
 
 class Entrega extends StatelessWidget {
   const Entrega({super.key});
